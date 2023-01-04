@@ -28,7 +28,7 @@ AppTasks.propTypes = {
 export default function AppTasks({ title, subheader, list, ...other }) {
   const { control } = useForm({
     defaultValues: {
-      taskCompleted: ['2'],
+      taskCompleted: [''],
     },
   });
 
@@ -82,24 +82,9 @@ function TaskItem({ task, checked, onChange }) {
     setOpen(null);
   };
 
-  const handleMarkComplete = () => {
-    handleCloseMenu();
-    console.log('MARK COMPLETE', task.id);
-  };
-
   const handleShare = () => {
     handleCloseMenu();
     console.log('SHARE', task.id);
-  };
-
-  const handleEdit = () => {
-    handleCloseMenu();
-    console.log('EDIT', task.id);
-  };
-
-  const handleDelete = () => {
-    handleCloseMenu();
-    console.log('DELETE', task.id);
   };
 
   return (
@@ -109,8 +94,7 @@ function TaskItem({ task, checked, onChange }) {
         px: 2,
         py: 0.75,
         ...(checked && {
-          color: 'text.disabled',
-          textDecoration: 'line-through',
+          color: 'text.warning',
         }),
       }}
     >
@@ -141,27 +125,12 @@ function TaskItem({ task, checked, onChange }) {
           },
         }}
       >
-        <MenuItem onClick={handleMarkComplete}>
-          <Iconify icon={'eva:checkmark-circle-2-fill'} sx={{ mr: 2 }} />
-          Mark Complete
-        </MenuItem>
-
-        <MenuItem onClick={handleEdit}>
-          <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
-          Edit
-        </MenuItem>
 
         <MenuItem onClick={handleShare}>
           <Iconify icon={'eva:share-fill'} sx={{ mr: 2 }} />
-          Share
+          Partager
         </MenuItem>
-
         <Divider sx={{ borderStyle: 'dashed' }} />
-
-        <MenuItem onClick={handleDelete} sx={{ color: 'error.main' }}>
-          <Iconify icon={'eva:trash-2-outline'} sx={{ mr: 2 }} />
-          Delete
-        </MenuItem>
       </Popover>
     </Stack>
   );

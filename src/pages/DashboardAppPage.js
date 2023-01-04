@@ -1,10 +1,13 @@
 import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 // @mui
+
+import Link from '@mui/material/Link';
 import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography } from '@mui/material';
 // components
 import Iconify from '../components/iconify';
+
 // sections
 import {
   AppTasks,
@@ -26,66 +29,90 @@ export default function DashboardAppPage() {
   return (
     <>
       <Helmet>
-        <title> Dashboard | Minimal UI </title>
+        <title> Tableau de bord | Mag'jeux </title>
       </Helmet>
 
       <Container maxWidth="xl">
         <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome back
+          Bienvenue chez Mag'jeux
         </Typography>
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Weekly Sales" total={714000} icon={'ant-design:android-filled'} />
+           
+          <Link href='/Contacts/GlobalView' underline="none">
+            {<AppWidgetSummary title="Contacts" total={767} color="info" icon={'ant-design:contacts-twotone'} />}
+          </Link>
+            </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+          <Link href='/Contacts/GlobalView' underline="none">
+          {<AppWidgetSummary title="Articles" total={120} color="info" icon={'ooui:article-ltr'} />}
+        </Link>
+          
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="New Users" total={1352831} color="info" icon={'ant-design:apple-filled'} />
+            
+            <Link href='/Contacts/GlobalView' underline="none">
+          {<AppWidgetSummary title="Logiciels" total={5} color="info" icon={'eos-icons:software'} />}
+            </Link>
+            </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+          <Link href='/Contacts/GlobalView' underline="none">
+          {<AppWidgetSummary title="Ventes annuelles" total={5} color="info" icon={'ep:sold-out'} />}
+            </Link>
+         
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Item Orders" total={1723315} color="warning" icon={'ant-design:windows-filled'} />
+          <Link href='/Contacts/GlobalView' underline="none">
+          {<AppWidgetSummary title="Commandes annuelles" total={41584} color="info" icon={'ic:baseline-shopping-cart-checkout'} />}
+            </Link>
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Bug Reports" total={234} color="error" icon={'ant-design:bug-filled'} />
+          <Link href='/Contacts/GlobalView' underline="none">
+          {<AppWidgetSummary title="Publicités réalisés" total={30} color="info" icon={'mdi:speak'} />}
+            </Link>          
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>
             <AppWebsiteVisits
-              title="Website Visits"
-              subheader="(+43%) than last year"
+              title="Variation des visites du site"
+              subheader="(+43%) en moyenne chaque année"
               chartLabels={[
-                '01/01/2003',
-                '02/01/2003',
-                '03/01/2003',
-                '04/01/2003',
-                '05/01/2003',
-                '06/01/2003',
-                '07/01/2003',
-                '08/01/2003',
-                '09/01/2003',
-                '10/01/2003',
-                '11/01/2003',
+                '01/01/2022',
+                '02/02/2023',
+                '03/01/2024',
+                '04/01/2025',
+                '05/01/2026',
+                '06/01/2027',
+                '07/01/2028',
+                '08/01/2029',
+                '09/01/2030',
+                '10/01/2031',
+                '11/01/2032',
               ]}
               chartData={[
                 {
-                  name: 'Team A',
+                  name: 'Blogs',
                   type: 'column',
                   fill: 'solid',
-                  data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
+                  data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, ],
                 },
                 {
-                  name: 'Team B',
+                  name: 'Article',
                   type: 'area',
                   fill: 'gradient',
-                  data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
+                  data: [44, 55, 41, 67, 37, 43, 21, 41, 56, 27, 50],
                 },
                 {
-                  name: 'Team C',
+                  name: 'Inscriptions',
                   type: 'line',
                   fill: 'solid',
-                  data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
+                  data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 60],
                 },
               ]}
             />
@@ -93,12 +120,13 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentVisits
-              title="Current Visits"
+              title="Clientèle internationale"
               chartData={[
-                { label: 'America', value: 4344 },
-                { label: 'Asia', value: 5435 },
+                { label: 'Amérique', value: 4344 },
+                { label: 'Asie', value: 5435 },
                 { label: 'Europe', value: 1443 },
-                { label: 'Africa', value: 4443 },
+                { label: 'Afrique', value: 4443 },
+                { label: 'Australie', value: 4443 },
               ]}
               chartColors={[
                 theme.palette.primary.main,
@@ -111,31 +139,31 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppConversionRates
-              title="Conversion Rates"
-              subheader="(+43%) than last year"
+              title="Clientèle par pays"
+              subheader="(+30%) chaque année"
               chartData={[
-                { label: 'Italy', value: 400 },
-                { label: 'Japan', value: 430 },
-                { label: 'China', value: 448 },
+                { label: 'Italie', value: 400 },
+                { label: 'Japon', value: 430 },
+                { label: 'Asie', value: 448 },
                 { label: 'Canada', value: 470 },
-                { label: 'France', value: 540 },
-                { label: 'Germany', value: 580 },
-                { label: 'South Korea', value: 690 },
-                { label: 'Netherlands', value: 1100 },
-                { label: 'United States', value: 1200 },
-                { label: 'United Kingdom', value: 1380 },
+                { label: 'France', value: 2390 },
+                { label: 'Allemagne', value: 580 },
+                { label: 'Sud Afrique', value: 690 },
+                { label: 'Nerlande', value: 1100 },
+                { label: 'Etats Unis', value: 1200 },
+                { label: 'Grande Bretagne', value: 1380 },
               ]}
             />
           </Grid>
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentSubject
-              title="Current Subject"
-              chartLabels={['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math']}
+              title="Jeux présentés"
+              chartLabels={['Paris Hippiques', 'Paris Sportifs', 'Jeux de casino', 'Jeux Turfs', 'Jeux de tirages', 'Autres']}
               chartData={[
-                { name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
-                { name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
-                { name: 'Series 3', data: [44, 76, 78, 13, 43, 10] },
+                { name: '1er quadrant', data: [80, 50, 30, 40, 100, 20] },
+                { name: '2nd quadrant', data: [20, 30, 40, 80, 20, 80] },
+                { name: '3ème quadrant', data: [44, 76, 78, 13, 43, 10] },
               ]}
               chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
             />
@@ -143,10 +171,11 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppNewsUpdate
-              title="News Update"
-              list={[...Array(5)].map((_, index) => ({
+              title="Sujets de blogs abordés"
+              list={[...Array(10)].map((_, index) => ({
                 id: faker.datatype.uuid(),
                 title: faker.name.jobTitle(),
+                URL : 'http',
                 description: faker.name.jobTitle(),
                 image: `/assets/images/covers/cover_${index + 1}.jpg`,
                 postedAt: faker.date.recent(),
@@ -156,17 +185,28 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppOrderTimeline
-              title="Order Timeline"
-              list={[...Array(5)].map((_, index) => ({
+              title="Ventes annuelles réalisées"
+              list={[...Array(12)].map((_, index) => ({
                 id: faker.datatype.uuid(),
                 title: [
-                  '1983, orders, $4220',
-                  '12 Invoices have been paid',
-                  'Order #37745 from September',
-                  'New order placed #XF-2356',
-                  'New order placed #XF-2346',
+                  'Total annuel 2022 : 41 584 commandes, pour 97 200 €',
+                  'Total annuel 2021 : 31 369 commandes, pour 57 3400 €',
+                  'Total annuel 2020 : 11 538 commandes, pour 37 680 €',
+                  'Commendes de l\'année en cours (2022)',
+                  '1983 commandes, pour 4420 €',
+                  '1227 commandes, pour 4200 €',
+                  '2227 commandes, pour 7220 €',
+                  '3027 commandes, pour 4220 €',
+                  '6227 commandes, pour 17 220 €',
+                  '2083 commandes, pour 4520 €',
+                  '2327 commandes, pour 4600 €',
+                  '2627 commandes, pour 7720 €',
+                  '4327 commandes, pour 4820 €',
+                  '6257 commandes, pour 17 920 €',
+                  '3045 commandes, pour 4120 €',
+                  '6227 commandes, pour 16 220 €',
                 ][index],
-                type: `order${index + 1}`,
+                type: `order${index + 2}`,
                 time: faker.date.past(),
               }))}
             />
@@ -174,7 +214,7 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppTrafficBySite
-              title="Traffic by Site"
+              title="Les abonnées des réseaux sociaux"
               list={[
                 {
                   name: 'FaceBook',
@@ -202,13 +242,14 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppTasks
-              title="Tasks"
+              title="Activités réalisés par Mag'jeux"
               list={[
-                { id: '1', label: 'Create FireStone Logo' },
-                { id: '2', label: 'Add SCSS and JS files if required' },
-                { id: '3', label: 'Stakeholder Meeting' },
-                { id: '4', label: 'Scoping & Estimations' },
-                { id: '5', label: 'Sprint Showcase' },
+                { id: '1', label: 'Etablir une liste des contacts' },
+                { id: '2', label: 'Rédiger les articles' },
+                { id: '3', label: 'Ventes livres de jeux' },
+                { id: '4', label: 'Vente des logiciels dejeux ' },
+                { id: '5', label: 'Donner des conseils aux clients' },
+                { id: '6', label: 'Ventes livres d\'autres sujets' },
               ]}
             />
           </Grid>

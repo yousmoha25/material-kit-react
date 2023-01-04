@@ -3,12 +3,11 @@ import { faker } from '@faker-js/faker';
 // ----------------------------------------------------------------------
 
 const POST_TITLES = [
-  'Whiteboard Templates By Industry Leaders',
+  'La femme fatal et les jeux',
   'Tesla Cybertruck-inspired camper trailer for Tesla fans who can’t just wait for the truck!',
   'Designify Agency Landing Page Design',
-  '✨What is Done is Done ✨',
-  'Fresh Prince',
-  'Six Socks Studio',
+  'Jeux Hippiques',
+  'Paris sportifs',
   'vincenzo de cotiis’ crossing over showcases a research on contamination',
   'Simple, Great Looking Animations in Your Project | Video Tutorial',
   '40 Free Serif Fonts for Digital Designers',

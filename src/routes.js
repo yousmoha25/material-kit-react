@@ -9,7 +9,21 @@ import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
 import ProductsPage from './pages/ProductsPage';
 import DashboardAppPage from './pages/DashboardAppPage';
-
+import ArtOne from './pages/Articles/Art1';
+import ArtTwo from './pages/Articles/Art2';
+import ArtThree from './pages/Articles/Art3';
+import ArtFour from './pages/Articles/Art4';
+import ArtFive from './pages/Articles/Art5';
+import ArtSix from './pages/Articles/Art6';
+import ArtSeven from './pages/Articles/Art7';
+import ArtEight from './pages/Articles/Art8';
+import ArtNine from './pages/Articles/Art9';
+import ArtTen from './pages/Articles/Art10';
+import GlobalView from './pages/Contacts/GlobalView';
+import SingleView from './pages/Contacts/SingleView';
+import PostView from './pages/Contacts/PostView';
+import UpdateView from './pages/Contacts/UpdateView';
+import DeleteView from './pages/Contacts/DeleteView';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -22,7 +36,22 @@ export default function Router() {
         { path: 'app', element: <DashboardAppPage /> },
         { path: 'user', element: <UserPage /> },
         { path: 'products', element: <ProductsPage /> },
-        { path: 'blog', element: <BlogPage /> },
+        { path: 'blog', element: <BlogPage />, 
+                  children: [
+                    {element: <Navigate to="blog"/>, index: true},
+                    {path: 'artOne',   element: <ArtOne/>},
+                    {path: 'artTwo',   element: <ArtTwo/>},
+                    {path: 'artThree', element: <ArtThree/>},
+                    {path: 'artFour',  element: <ArtFour/>},
+                    {path: 'artFive',  element: <ArtFive/>},
+                    {path: 'artSix',   element: <ArtSix/>},
+                    {path: 'artSeven', element: <ArtSeven/>},
+                    {path: 'artEight', element: <ArtEight/>},
+                    {path: 'artNine',  element: <ArtNine/>},
+                    {path: 'artTen',   element: <ArtTen/>},
+
+                  ]
+            },
       ],
     },
     {
@@ -32,14 +61,25 @@ export default function Router() {
     {
       element: <SimpleLayout />,
       children: [
-        { element: <Navigate to="/dashboard/app" />, index: true },
+        { element: <Navigate to="/dashboard/app"/>, index: true },
         { path: '404', element: <Page404 /> },
-        { path: '*', element: <Navigate to="/404" /> },
+        { path: '*', element: <Navigate to="/404"/> },
       ],
     },
     {
       path: '*',
       element: <Navigate to="/404" replace />,
+    },
+    {
+      path: 'globalView',
+      element: <GlobalView />,
+      children: [
+        {element: <Navigate to="/globalWiew"/>, index: true},
+        {path: 'singleContact', element: <SingleView/>},
+        {path: 'postView', element: <PostView/>},
+        {path: 'updateView', element: <UpdateView/>},
+        {path: 'deleteView', element: <DeleteView/>}
+      ]
     },
   ]);
 

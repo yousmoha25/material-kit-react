@@ -22,17 +22,17 @@ export default function Page404() {
   return (
     <>
       <Helmet>
-        <title> 404 Page Not Found | Minimal UI </title>
+        <title> 404 Page non trouvé| Mag'jeux </title>
       </Helmet>
 
       <Container>
         <StyledContent sx={{ textAlign: 'center', alignItems: 'center' }}>
           <Typography variant="h3" paragraph>
-            Sorry, page not found!
+           Désolé ! Page non trouvée !
           </Typography>
 
           <Typography sx={{ color: 'text.secondary' }}>
-            Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check your
+            Désolé ! La page que vous cherchez n'existe pas. Peut-être que avez-vous mal saisi l'URL? Assurez-vous de vérifier votre
             spelling.
           </Typography>
 
@@ -43,7 +43,7 @@ export default function Page404() {
           />
 
           <Button to="/" size="large" variant="contained" component={RouterLink}>
-            Go to Home
+            Accueil
           </Button>
         </StyledContent>
       </Container>
