@@ -31,12 +31,12 @@ export default function BlogPostsSearch({ posts }) {
       renderInput={(params) => (
         <TextField
           {...params}
-          placeholder="Search post..."
+          placeholder="Chercher un article..."
           InputProps={{
             ...params.InputProps,
             startAdornment: (
               <InputAdornment position="start">
-                <Iconify icon={'eva:search-fill'} sx={{ ml: 1, width: 20, height: 20, color: 'text.disabled' }} />
+                <Iconify icon={'eva:search-fill'} sx={{ ml: 1, width: 20, height: 20, }} />
               </InputAdornment>
             ),
           }}

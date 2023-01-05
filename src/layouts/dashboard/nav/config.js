@@ -12,25 +12,42 @@ const navConfig = [
     icon: icon('ic_analytics'),
   },
   {
+    title: 'Articles',
+    path: '/dashboard/blog',
+    icon: icon(''),
+  },
+  {
+    title: 'Magazines',
+    path: '/dashboard/magazines',
+    icon: icon('ic_cart'),
+  },
+  {
+    title: 'Logiciels ',
+    path: '/dashboard/logiciels',
+    icon: icon('ic_cart'),
+  },
+  {
+    title: 'Livres ',
+    path: '/dashboard/books',
+    icon: icon('ic_cart'),
+  },
+  {
+    title: 'Divers ',
+    path: '/dashboard/divers',
+    icon: icon('ic_cart'),
+  },
+  {
     title: 'Utilisateurs',
     path: '/dashboard/user',
     icon: icon('ic_user'),
-  },
-  {
-    title: 'Produits',
-    path: '/dashboard/products',
-    icon: icon('ic_cart'),
   },
   {
     title: 'Connexion',
     path: '/login',
     icon: icon('ic_lock'),
   },
-  {
-    title: 'Blogs',
-    path: '/dashboard/blog',
-    icon: icon('ic_blog'),
-  },
+  
+  
 ];
 
 export default navConfig;

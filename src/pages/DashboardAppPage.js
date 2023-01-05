@@ -40,13 +40,13 @@ export default function DashboardAppPage() {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
            
-          <Link href='/Contacts/GlobalView' underline="none">
+          <Link href='/GlobalView' underline="none">
             {<AppWidgetSummary title="Contacts" total={767} color="info" icon={'ant-design:contacts-twotone'} />}
           </Link>
             </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-          <Link href='/Contacts/GlobalView' underline="none">
+          <Link href='/blog' underline="none">
           {<AppWidgetSummary title="Articles" total={120} color="info" icon={'ooui:article-ltr'} />}
         </Link>
           
@@ -70,6 +70,18 @@ export default function DashboardAppPage() {
           <Link href='/Contacts/GlobalView' underline="none">
           {<AppWidgetSummary title="Commandes annuelles" total={41584} color="info" icon={'ic:baseline-shopping-cart-checkout'} />}
             </Link>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+          <Link href='/Contacts/GlobalView' underline="none">
+          {<AppWidgetSummary title="Publicités réalisés" total={30} color="info" icon={'mdi:speak'} />}
+            </Link>          
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+          <Link href='/Contacts/GlobalView' underline="none">
+          {<AppWidgetSummary title="Publicités réalisés" total={30} color="info" icon={'mdi:speak'} />}
+            </Link>          
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>

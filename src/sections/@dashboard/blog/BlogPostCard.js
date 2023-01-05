@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 // @mui
+import Link from '@mui/material/Link';
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Link, Card, Grid, Avatar, Typography, CardContent } from '@mui/material';
+import { Box, Card, Grid, Avatar, Typography, CardContent } from '@mui/material';
 // utils
 import { fDate } from '../../../utils/formatTime';
 import { fShortenNumber } from '../../../utils/formatNumber';
@@ -80,7 +81,7 @@ export default function BlogPostCard({ post, index }) {
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
-                bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72),
+                bgcolor: (theme) => alpha(theme.palette.grey[900], 0.0),
               },
             }),
             ...(latestPostLarge && {
@@ -117,8 +118,10 @@ export default function BlogPostCard({ post, index }) {
               }),
             }}
           />
-
-          <StyledCover alt={title} src={cover} />
+<Link href='/artOne' underline="none">
+   <StyledCover alt={title} src={cover} />
+</Link>
+         
         </StyledCardMedia>
 
         <CardContent
@@ -146,7 +149,11 @@ export default function BlogPostCard({ post, index }) {
               }),
             }}
           >
-            {title}
+          
+          <Link href='/artOne' underline="none">
+          {title}
+          </Link>
+           
           </StyledTitle>
 
           <StyledInfo>

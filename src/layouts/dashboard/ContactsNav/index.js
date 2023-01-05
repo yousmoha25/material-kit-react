@@ -13,7 +13,7 @@ import Logo from '../../../components/logo';
 import Scrollbar from '../../../components/scrollbar';
 import NavSection from '../../../components/nav-section';
 //
-import contactsNavConfig from'./contactsNav'
+import contactsNavConfig from'./config'
 
 // ----------------------------------------------------------------------
 
